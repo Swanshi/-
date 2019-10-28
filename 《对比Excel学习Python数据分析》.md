@@ -82,9 +82,14 @@
 ### 连锁超市分析师
 1. 什么商品畅销——
     1. 订单中的商品按照id分组，分组后按组别求和（按类别比较）
-    - data=pd.read_csv(r'',parese_data=['成交时间'])
-      data.groupby('类别id')['销量'].sum().reset_index()#按类别分组求销量
-      data.groupby('类别id')['销量'].sum().reset_index().sort_value(by='xiaoliang',ascending=False).head(10)#对销量按照降序排列，并且取前十行（ascending默认是升序）
+    ``` 
+    data=pd.read_csv(r'',parese_data=['成交时间'])
+    data.groupby('类别id')['销量'].sum().reset_index()#按类别分组求销量
+    data.groupby('类别id')['销量'].sum().reset_index().sort_value(by='xiaoliang',ascending=False).head(10)
+    #对销量按照降序排列，并且取前十行（ascending默认是升序）
+    ``` 
     2. 建立数据透视表
-    - pd.pivot_table(data_2017,index='商品id',value='xiaoliang',aggfun='sum').reset_index().sort_values(by='xiaoliang',ascending=False).head(10)
+    ```
+    pd.pivot_table(data_2017,index='商品id',value='xiaoliang',aggfun='sum').reset_index().sort_values(by='xiaoliang',ascending=False).head(10)
+    ``` 
 ## numpy与常用函数
